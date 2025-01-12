@@ -16,6 +16,7 @@ DB_CONFIG = {
 
 def register_user(email, password):
     """Registra un nuevo usuario en la base de datos"""
+    connection = None  # Inicializar con None
     try:
         connection = mysql.connector.connect(**DB_CONFIG)
         if connection.is_connected():
@@ -33,9 +34,10 @@ def register_user(email, password):
         print(f"Error: {e}")
         return False
     finally:
-        if connection.is_connected():
+        if connection and connection.is_connected():  # Verificar que connection no sea None
             cursor.close()
             connection.close()
+
 
 
 @app.route("/", methods=["GET", "POST"])
