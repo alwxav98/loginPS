@@ -39,9 +39,15 @@ def register_user(email, password):
             connection.close()
 
 
+@app.route("/inicio")
+def inicio():
+    """Página de inicio con botones para registrar o iniciar sesión"""
+    return render_template("inicio.html")
+
 
 @app.route("/", methods=["GET", "POST"])
 def register():
+    """Formulario para registrar usuarios"""
     if request.method == "POST":
         email = request.form["email"]
         password = request.form["password"]
@@ -54,6 +60,7 @@ def register():
 
 @app.route("/success")
 def success():
+    """Página de éxito tras el registro"""
     return "¡Usuario registrado exitosamente!"
 
 
