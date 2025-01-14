@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  web:
+    build:
+      context: .
+    container_name: flask-app
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./uploads:/app/uploads  # Montar el directorio de imágenes
+    restart: always  # Reinicia automáticamente el contenedor si falla o al reiniciar el host
+    environment:
+      - FLASK_ENV=production
+      - DATABASE_HOST=ec2-18-207-77-6.compute-1.amazonaws.com
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=claveSegura123@
+      - DATABASE_NAME=loginPS
+
+volumes:
+  uploads:
