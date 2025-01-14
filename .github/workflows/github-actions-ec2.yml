@@ -38,6 +38,6 @@ jobs:
             docker pull alevm98/appregisterps:latest
             docker stop registerps || true
             docker rm registerps || true
-            docker run -d --name registerps --network host alevm98/appregisterps:latest
-
+            docker run -d --name registerps --restart always --network host alevm98/appregisterps:latest
+            docker image prune -f
             echo "Desplegado en ${{ secrets.HOST_DNS }}"
