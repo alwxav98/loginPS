@@ -43,10 +43,12 @@ def register_user(email, password):
             connection.close()
 
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def inicio():
     """Página de inicio con botones para registrar o iniciar sesión"""
-    return render_template("inicio.html")  # Renderiza una plantilla HTML
+    return render_template("inicio.html")
+
+
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -82,5 +84,6 @@ def success():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+
 
 
