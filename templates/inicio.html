@@ -4,11 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Inicio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .logo {
+            max-width: 100px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555555;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bienvenido</h1>
-    <p>Selecciona una opción:</p>
-    <button onclick="window.location.href='/register'">Registrar</button>
-    <button onclick="window.location.href='http://ec2-54-157-221-188.compute-1.amazonaws.com:5000/'">Iniciar Sesión</button>
+    <div class="container">
+        <!-- Agregar logo -->
+        <img src="logo.png" alt="Logo" class="logo">
+        <h1>Bienvenido</h1>
+        <p>Selecciona una opción:</p>
+        <!-- Botones para registrar e iniciar sesión -->
+        <a href="/register" class="btn">Registrar</a>
+        <a href="http://ec2-54-157-221-188.compute-1.amazonaws.com:5000/" class="btn btn-secondary">Iniciar Sesión</a>
+    </div>
 </body>
 </html>
